@@ -1,0 +1,21 @@
+
+<div class="tet">
+
+  <div  *ngFor="let project of projects" class="card">
+  
+    <p class="cookieHeading">{{project.name}}</p>
+    <p><strong>Status:</strong> {{ project.status }}</p>
+    <p><strong>Description:</strong> {{ project.description }}</p>
+    <p><strong>Start Date:</strong> {{ project.startDate | date: 'shortDate' }}</p>
+    <p><strong>End Date:</strong> {{ project.endDate | date: 'shortDate' }}</p>
+  
+    <div class="buttonContainer">
+      <button class="acceptButton">Allow</button>
+    <button  (click)="deleteProject(project.id.toString())" class="declineButton">Decline</button>
+    </div>
+    
+  
+  </div>
+</div>
+  
+  

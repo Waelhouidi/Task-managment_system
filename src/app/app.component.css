@@ -1,0 +1,6 @@
+.list{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+}

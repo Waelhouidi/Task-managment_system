@@ -1,0 +1,39 @@
+<div class="container">
+  <h2>Projects</h2>
+
+  <!-- Add Project Form -->
+  <form (ngSubmit)="addProject()">
+    <div>
+      <label for="name">Project Name</label>
+      <input [(ngModel)]="newProject.name" name="name" required placeholder="Enter project name" />
+    </div>
+    
+    <div>
+      <label for="description">Description</label>
+      <textarea [(ngModel)]="newProject.description" name="description" placeholder="Enter project description"></textarea>
+    </div>
+
+    <div>
+      <label for="startDate">Start Date</label>
+      <input type="date" [(ngModel)]="newProject.startDate" name="startDate" [value]="newProject.startDate | date: 'yyyy-MM-dd'" required />
+    </div>
+
+    <div>
+      <label for="endDate">End Date</label>
+      <input type="date" [(ngModel)]="newProject.endDate" name="endDate" [value]="newProject.endDate | date: 'yyyy-MM-dd'" required />
+    </div>
+
+    <div>
+      <label for="status">Status</label>
+      <select [(ngModel)]="newProject.status" name="status">
+        <option value="Pending">Pending</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+    </div>
+
+    <button type="submit">Add Project</button>
+  </form>
+
+
+</div>
