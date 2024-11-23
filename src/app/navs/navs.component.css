@@ -9,3 +9,88 @@ display: flex;
 
 
 }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+}
+
+.nav-logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.nav-items ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-items li {
+  margin: 0 15px;
+}
+
+.nav-items a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-button a {
+  background-color: #ff5722;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+#hamburger-menu {
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+#mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.mobile-nav-items ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.mobile-nav-items li {
+  margin: 20px 0;
+}
+
+.mobile-nav-button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+@media (max-width: 770px) {
+  .nav-items {
+      display: none;
+  }
+  #hamburger-menu {
+      display: block;
+  }
+}
