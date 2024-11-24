@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { project } from '../models/project';
 import { ProjectService } from '../services/project.service';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
+import { NavsComponent } from "../navs/navs.component"; 
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, NavsComponent],
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css']
 })

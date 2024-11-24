@@ -1,84 +1,85 @@
-/* From Uiverse.io by vinodjangid07 */ 
+/* General container styling */
+.tet {
+  display: flex;
+  flex-wrap: wrap; /* Responsive wrapping for cards */
+  justify-content: center;
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+  background-color: #f5f5f5; /* Light gray background */
+}
+
+/* Individual card styling */
 .card {
-    width: 390px;
-    height: 220px;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 30px;
-    gap: 13px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 10px; /* Space between cards */
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 1200px; /* Limit the width of the container */
-  }
-  
- 
-  
-  
-  
-  .cookieDescription {
-    text-align: center;
-    font-size: 0.7em;
-    font-weight: 600;
-    color: rgb(99, 99, 99);
-  }
-  
-  .buttonContainer {
-    display: flex;
-    gap: 20px;
-    flex-direction: row;
-  }
-  
-  .acceptButton {
-    width: 80px;
-    height: 30px;
-    background-color: #7b57ff;
-    transition-duration: .2s;
-    border: none;
-    color: rgb(241, 241, 241);
-    cursor: pointer;
-    font-weight: 600;
-    border-radius: 20px;
-  }
-  
-  .declineButton {
-    width: 80px;
-    height: 30px;
-    background-color: rgb(218, 218, 218);
-    transition-duration: .2s;
-    color: rgb(46, 46, 46);
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    border-radius: 20px;
-  }
-  
-  .declineButton:hover {
-    background-color: #ebebeb;
-    transition-duration: .2s;
-  }
-  
-  .acceptButton:hover {
-    background-color: #9173ff;
-    transition-duration: .2s;
-  }
-  .card img {
-    max-width: 100%; /* Ensure the image doesn't overflow its container */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Optional styling */
-  }
-  .tet{
-    display: flex;
-    flex-direction:row;
-    gap: 10px;
-  width: 100%;
-  height: 700px;
-  }
+  background-color: #ffffff; /* White background for the card */
+  border: 1px solid #e0e0e0; /* Subtle border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 300px; /* Fixed width for each card */
+  padding: 20px;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Card header */
+.cookieHeading {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+/* Text content styling */
+.card p {
+  font-size: 14px;
+  color: #555555;
+  margin: 5px 0;
+}
+
+/* Date formatting */
+.card p strong {
+  color: #007bff; /* Highlighted strong text */
+}
+
+/* Button container */
+.buttonContainer {
+  display: flex;
+  justify-content: space-between; /* Space out buttons evenly */
+  margin-top: 15px;
+}
+
+/* Accept button styling */
+.acceptButton {
+  background-color: #28a745; /* Green for accept */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.acceptButton:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+/* Decline button styling */
+.declineButton {
+  background-color: #dc3545; /* Red for decline */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.declineButton:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
