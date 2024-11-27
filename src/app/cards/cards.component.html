@@ -2,8 +2,6 @@
 
 <div class="container">
   <h2>Projects</h2>
-
-  <!-- Add Project Form -->
   <form (ngSubmit)="addProject()">
     <div>
       <label for="name">Project Name</label>
@@ -28,9 +26,9 @@
     <div>
       <label for="status">Status</label>
       <select [(ngModel)]="newProject.status" name="status">
-        <option value="Pending">Pending</option>
-        <option value="In Progress">In Progress</option>
-        <option value="Completed">Completed</option>
+        <option value="important">important</option>
+        <option value="low">low</option>
+        <option value="take time">take time</option>
       </select>
     </div>
 

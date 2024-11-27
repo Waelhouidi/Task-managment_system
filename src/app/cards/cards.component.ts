@@ -20,7 +20,7 @@ export class ProjectsComponent implements OnInit {
     description: '',
     startDate: new Date(),
     endDate: new Date(),
-    status: 'Pending',
+    status: 'important',
   };
 
   constructor(private projectService: ProjectService) {}
@@ -46,7 +46,7 @@ export class ProjectsComponent implements OnInit {
         description: '',
         startDate: new Date(),
         endDate: new Date(),
-        status: 'Pending',
+        status: 'important',
       };
     });
   }

@@ -1,0 +1,53 @@
+<!-- src/app/teams/teams.component.html -->
+<div class="container">
+    <h2>Add Team Member</h2>
+  
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()"> <!-- Bind formGroup to taskForm -->
+      
+      <!-- Name -->
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" formControlName="name" placeholder="Enter name">
+      </div>
+  
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" placeholder="Enter email">
+      </div>
+  
+      <!-- Post -->
+      <div class="form-group">
+        <label for="post">Post:</label>
+        <input type="text" id="post" formControlName="post" placeholder="Enter post">
+      </div>
+  
+      <!-- Phone -->
+      <div class="form-group">
+        <label for="phone">Phone number:</label>
+        <input type="text" id="phone" formControlName="phone" placeholder="Enter phone number">
+      </div>
+  
+      <!-- Project -->
+      <div class="form-group">
+        <label for="project">Select project:</label>
+        <input type="text" id="project" formControlName="project" placeholder="Enter project name">
+      </div>
+  
+      <!-- Start Date -->
+      <div class="form-group">
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" formControlName="startDate">
+      </div>
+  
+      <!-- End Date -->
+      <div class="form-group">
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" formControlName="endDate">
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="!taskForm.valid">Submit</button>
+    </form>
+  </div>
+  

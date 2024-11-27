@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { project } from '../models/project'; 
 import { addDoc, DocumentReference } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators'; 
-import { Timestamp } from 'firebase/firestore'; // Make sure you import Timestamp
+import { Timestamp } from 'firebase/firestore'; 
 
 @Injectable({
   providedIn: 'root',
@@ -24,7 +24,6 @@ export class ProjectService {
     return collectionData(this.projectsCollection, { idField: 'id' }).pipe(
       map((projects: any[]) => {
         return projects.map(project => {
-          // Convert Firestore Timestamp to Date objects
           return {
             ...project,
             startDate: project.startDate instanceof Timestamp ? project.startDate.toDate() : new Date(project.startDate),
