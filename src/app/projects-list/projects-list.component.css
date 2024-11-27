@@ -1,85 +1,154 @@
-/* General container styling */
-.tet {
+
+.red{
+  color: red;
+}
+.ag-format-container {
+  
+  width: 1142px;
+  margin: 0 auto;
+}
+
+
+body {
+  background-color: #000;
   display: flex;
-  flex-wrap: wrap; /* Responsive wrapping for cards */
+}
+.ag-courses_box {
+ 
+  display: flex;
+
   justify-content: center;
-  gap: 20px; /* Space between cards */
-  padding: 30px;
-/*  background-color: #ed0404;  Light gray background */
-}
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 
-/* Individual card styling */
-.card {
-  background-color: #ffffff; /* White background for the card */
-  border: 1px solid #e0e0e0; /* Subtle border */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  width: 300px; /* Fixed width for each card */
-  padding: 20px;
-  box-sizing: border-box; /* Ensure padding doesn't affect width */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 50px 0;
 }
+.ag-courses_item {
+  -ms-flex-preferred-size: calc(33.33333% - 30px);
+  flex-basis: calc(33.33333% - 30px);
 
-.card:hover {
-  transform: translateY(-5px); /* Slight lift on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  margin: 0 15px 30px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
 }
+.ag-courses-item_link {
+  display: block;
+  padding: 30px 20px;
+  background-color: #121212;
 
-/* Card header */
-.cookieHeading {
-  font-size: 18px;
+  overflow: hidden;
+
+  position: relative;
+}
+.ag-courses-item_link:hover,
+.ag-courses-item_link:hover .ag-courses-item_date {
+  text-decoration: none;
+  color: #FFF;
+}
+.ag-courses-item_link:hover .ag-courses-item_bg {
+  -webkit-transform: scale(10);
+  -ms-transform: scale(10);
+  transform: scale(10);
+}
+.ag-courses-item_title {
+  min-height: 87px;
+  margin: 0 0 25px;
+
+  overflow: hidden;
+
   font-weight: bold;
-  color: #333333;
-  margin-bottom: 10px;
+  font-size: 30px;
+  color: #FFF;
+
+  z-index: 2;
+  position: relative;
+}
+.ag-courses-item_date-box {
+  font-size: 18px;
+  color: #FFF;
+
+  z-index: 2;
+  position: relative;
+}
+.ag-courses-item_date {
+  font-weight: bold;
+  color: #f9b234;
+
+  -webkit-transition: color .5s ease;
+  -o-transition: color .5s ease;
+  transition: color .5s ease
+}
+.ag-courses-item_bg {
+  height: 128px;
+  width: 128px;
+  background-color: #f9b234;
+
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+
+  border-radius: 50%;
+
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+.ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+  background-color: #3ecd5e;
+}
+.ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+  background-color: #e44002;
+}
+.ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+  background-color: #952aff;
+}
+.ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+  background-color: #cd3e94;
+}
+.ag-courses_item:nth-child(6n) .ag-courses-item_bg {
+  background-color: #4c49ea;
 }
 
-/* Text content styling */
-.card p {
-  font-size: 14px;
-  color: #555555;
-  margin: 5px 0;
+
+
+@media only screen and (max-width: 979px) {
+  .ag-courses_item {
+    -ms-flex-preferred-size: calc(50% - 30px);
+    flex-basis: calc(50% - 30px);
+  }
+  .ag-courses-item_title {
+    font-size: 24px;
+  }
 }
 
-/* Date formatting */
-.card p strong {
-  color: #007bff; /* Highlighted strong text */
-}
+@media only screen and (max-width: 767px) {
+  .ag-format-container {
+    width: 96%;
+  }
 
-/* Button container */
-.buttonContainer {
-  display: flex;
-  justify-content: space-between; /* Space out buttons evenly */
-  margin-top: 15px;
 }
+@media only screen and (max-width: 639px) {
+  .ag-courses_item {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+  }
+  .ag-courses-item_title {
+    min-height: 72px;
+    line-height: 1;
 
-/* Accept button styling */
-.acceptButton {
-  background-color: #28a745; /* Green for accept */
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 12px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    font-size: 24px;
+  }
+  .ag-courses-item_link {
+    padding: 22px 40px;
+  }
+  .ag-courses-item_date-box {
+    font-size: 16px;
+  }
 }
-
-.acceptButton:hover {
-  background-color: #218838; /* Darker green on hover */
-}
-
-/* Decline button styling */
-.declineButton {
-  background-color: #dc3545; /* Red for decline */
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 12px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.declineButton:hover {
-  background-color: #c82333; /* Darker red on hover */
+.red{
+  color: red;
 }

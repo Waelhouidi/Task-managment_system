@@ -5,6 +5,7 @@ import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { TealmsComponent } from './teams/teams.component';
+import { ProjectDeatilsComponent } from './project-deatils/project-deatils.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -12,5 +13,6 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'project', component: ProjectsComponent, canActivate: [AuthGuard] },
   { path: 'project-list', component: ProjectListComponent, canActivate: [AuthGuard] },
-  { path: 'teams', component: TealmsComponent }
+  { path: 'teams', component: TealmsComponent },
+  { path: 'project-details', component: ProjectDeatilsComponent}
 ];
