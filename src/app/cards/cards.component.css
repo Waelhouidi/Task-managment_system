@@ -1,37 +1,132 @@
+/* General styling for the container */
 .container {
-  max-width: 800px;
-  margin: auto;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
 }
 
-.card {
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin: 10px 0;
-  border-radius: 5px;
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #6a0dad; /* Violet color */
 }
 
-.card-header {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+/* Form input and textarea styling */
+form {
+  display: flex;
+  flex-direction: column;
 }
 
-.card-body {
-  margin-bottom: 15px;
+label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
 }
 
-.card-footer {
-  text-align: right;
+input[type="text"],
+input[type="date"],
+textarea,
+select {
+  font-size: 1rem;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
-button {
-  padding: 10px 15px;
-  background-color: #f44336;
+input[type="text"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+  border-color: #6a0dad; /* Violet border on focus */
+}
+
+/* Specific styles for the textarea */
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Button styling */
+button[type="submit"] {
+  background-color: #6a0dad; /* Violet background */
   color: white;
+  font-size: 1rem;
+  padding: 12px;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #580a99; /* Darker violet on hover */
+}
+
+/* Select styling */
+select {
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #d32f2f;
+/* Input and textarea focus effect */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #6a0dad; /* Violet border color on focus */
+  box-shadow: 0 0 0 2px rgba(106, 13, 173, 0.3); /* Light violet glow */
+}
+
+/* Adjust for mobile responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    width: 90%;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+/* Styling for the textarea (Description field) */
+textarea {
+  font-size: 1rem;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  resize: vertical;
+  min-height: 150px;
+  max-height: 300px;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+/* Add a subtle shadow on focus */
+textarea:focus {
+  border-color: #6a0dad; /* Violet border on focus */
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(106, 13, 173, 0.2); /* Light violet glow */
+  outline: none; /* Remove default outline */
+}
+
+/* Add a smooth transition for background color and box shadow */
+textarea:hover {
+  border-color: #6a0dad; /* Violet border on hover */
+  background-color: #f4f4f9; /* Light grey background when hovered */
+}
+
+/* Optional: Styling for textarea placeholder text */
+textarea::placeholder {
+  color: #888;
+  font-style: italic;
 }

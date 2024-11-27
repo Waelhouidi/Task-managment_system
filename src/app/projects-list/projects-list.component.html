@@ -1,6 +1,6 @@
+<app-navs></app-navs>
 
 <div class="tet">
-<app-navs></app-navs>
   <div  *ngFor="let project of projects" class="card">
   
     <p class="cookieHeading">{{project.name}}</p>
@@ -10,7 +10,7 @@
     <p><strong>End Date:</strong> {{ project.endDate | date: 'shortDate' }}</p>
   
     <div class="buttonContainer">
-      <button class="acceptButton">Allow</button>
+      <button class="acceptButton" (click)="modifyProject(project.id.toString())" > Modify</button>
     <button  (click)="deleteProject(project.id.toString())" class="declineButton">Decline</button>
     </div>
     

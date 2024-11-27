@@ -4,6 +4,7 @@ import { ProjectService } from '../services/project.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NavsComponent } from "../navs/navs.component"; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-projectlist',
@@ -14,13 +15,16 @@ import { NavsComponent } from "../navs/navs.component";
 })
 export class ProjectListComponent implements OnInit {
   projects: project[] = [];
+  router: any;
 
   constructor(private projectService: ProjectService) {}
 
   ngOnInit(): void {
     this.fetchProjects();
   }
-
+  modifyProject(id: string) {
+    this.router.navigate(['/edit-project', id]); 
+  }
   fetchProjects() {
     this.projectService.getProjects().subscribe((data) => {
       this.projects = data;
@@ -32,4 +36,5 @@ export class ProjectListComponent implements OnInit {
       this.fetchProjects(); 
     });
   }
+ 
 }

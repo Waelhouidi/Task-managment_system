@@ -4,8 +4,8 @@
   flex-wrap: wrap; /* Responsive wrapping for cards */
   justify-content: center;
   gap: 20px; /* Space between cards */
-  padding: 20px;
-  background-color: #f5f5f5; /* Light gray background */
+  padding: 30px;
+/*  background-color: #ed0404;  Light gray background */
 }
 
 /* Individual card styling */

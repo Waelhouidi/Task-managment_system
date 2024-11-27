@@ -10,5 +10,6 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'project', component: ProjectsComponent, canActivate: [AuthGuard] },
-  { path: 'project-list', component: ProjectListComponent, canActivate: [AuthGuard] }
+  { path: 'project-list', component: ProjectListComponent, canActivate: [AuthGuard] },
+  { path: 'edit-project/:id', component: ProjectsComponent }
 ];
