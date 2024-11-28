@@ -1,53 +1,74 @@
-<!-- src/app/teams/teams.component.html -->
+
+<app-navs></app-navs>
 <div class="container">
-    <h2>Add Team Member</h2>
-  
-    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()"> <!-- Bind formGroup to taskForm -->
-      
-      <!-- Name -->
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" formControlName="name" placeholder="Enter name">
+  <div class="row">
+      <div class="col-md-4 mb-md-0 mb-3">
+          <div class="card d-flex flex-column align-items-center justify-content-center">
+              <div class="inner-content d-flex flex-column align-items-center justify-content-center">
+                  <div class="img-container rounded-circle">
+                      <img src="https://svgshare.com/i/17bj.svg"
+                          alt="" class="rounded-circle">
+                  </div>
+                  <div class="h3">Mike Nielsen</div>
+                  <p class="designation text-muted text-uppercase">Web Developer</p>
+                  <div class="button d-flex justify-content-between mt-2">
+              <button type="button" class="btn d-flex justify-content-center border squre-4">
+                  <img src="https://svgshare.com/i/1690.svg">
+              </button>
+              <button type="button" class="btn d-flex justify-content-center border squre-4">
+                  <img src="https://svgshare.com/i/168i.svg">
+              </button>
+              <button type="button" class="btn d-flex justify-content-center border squre-4">
+                  <img src="https://svgshare.com/i/168b.svg">
+              </button>
+          </div>                        
+               </div>
+          </div>
       </div>
-  
-      <!-- Email -->
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" formControlName="email" placeholder="Enter email">
+      <div class="col-md-4 mb-md-0 mb-3">
+          <div class="card d-flex flex-column align-items-center justify-content-center">
+              <div class="inner-content d-flex flex-column align-items-center justify-content-center">
+                  <div class="img-container rounded-circle">
+                      <img src="https://svgshare.com/i/17cJ.svg"
+                          alt="" class="rounded-circle">
+                  </div>
+                  <div class="h3">Arlene McCoy</div>
+                  <p class="designation text-muted text-uppercase">Softwer Developer</p>
+                  <div class="button d-flex justify-content-between mt-2">
+              <button type="button" class="btn d-flex justify-content-center border squre-4">
+                  <img src="https://svgshare.com/i/1690.svg">
+              </button>
+              <button type="button" class="btn d-flex justify-content-center border squre-4">
+                  <img src="https://svgshare.com/i/168i.svg">
+              </button>
+              <button type="button" class="btn d-flex justify-content-center border squre-4">
+                  <img src="https://svgshare.com/i/168b.svg">
+              </button>
+          </div>   
+              </div>
+          </div>
       </div>
-  
-      <!-- Post -->
-      <div class="form-group">
-        <label for="post">Post:</label>
-        <input type="text" id="post" formControlName="post" placeholder="Enter post">
+      <div class="col-md-4 mb-md-0 mb-3">
+          <div class="card d-flex flex-column align-items-center justify-content-center">
+              <div class="inner-content d-flex flex-column align-items-center justify-content-center">
+                  <div class="img-container rounded-circle">
+                      <img src="https://svgshare.com/i/17ca.svg"
+                          alt="" class="rounded-circle">
+                  </div>
+                  <div class="h3">Micheal Doe</div>
+                  <p class="designation text-muted text-uppercase">App Developer</p>
+                 <div class="button d-flex justify-content-between mt-2">
+              <button type="button" class="btn d-flex justify-content-center border squre-4">
+                  <img src="https://svgshare.com/i/1690.svg">
+              </button>
+              <button type="button" class="btn d-flex justify-content-center border squre-4">
+                  <img src="https://svgshare.com/i/168i.svg">
+              </button>
+              <button type="button" class="btn d-flex justify-content-center border squre-4">
+                  <img src="https://svgshare.com/i/168b.svg">
+              </button>
+          </div>   
+          </div>
       </div>
-  
-      <!-- Phone -->
-      <div class="form-group">
-        <label for="phone">Phone number:</label>
-        <input type="text" id="phone" formControlName="phone" placeholder="Enter phone number">
-      </div>
-  
-      <!-- Project -->
-      <div class="form-group">
-        <label for="project">Select project:</label>
-        <input type="text" id="project" formControlName="project" placeholder="Enter project name">
-      </div>
-  
-      <!-- Start Date -->
-      <div class="form-group">
-        <label for="startDate">Start Date:</label>
-        <input type="date" id="startDate" formControlName="startDate">
-      </div>
-  
-      <!-- End Date -->
-      <div class="form-group">
-        <label for="endDate">End Date:</label>
-        <input type="date" id="endDate" formControlName="endDate">
-      </div>
-  
-      <!-- Submit Button -->
-      <button type="submit" [disabled]="!taskForm.valid">Submit</button>
-    </form>
   </div>
-  
+</div>
