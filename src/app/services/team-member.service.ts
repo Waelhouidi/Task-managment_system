@@ -1,7 +1,7 @@
 // src/app/services/team-member.service.ts
 
 import { Injectable } from '@angular/core';
-import { Firestore, collection, addDoc, collectionData, doc, updateDoc, deleteDoc, DocumentReference } from '@angular/fire/firestore';
+import { Firestore, collection, addDoc, collectionData, doc, updateDoc, deleteDoc, DocumentReference, Timestamp } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { TeamMember } from '../models/member';
 import { map } from 'rxjs/operators';
@@ -32,13 +32,14 @@ export class TeamMemberService {
         return teamMembers.map((member) => {
           return {
             ...member,
-            startDate: member.startDate.toDate(), // Convert Firestore Timestamp to Date
-            endDate: member.endDate.toDate(), // Convert Firestore Timestamp to Date
+            startDate: member.startDate instanceof Timestamp ? member.startDate.toDate().toISOString() : new Date(member.startDate).toISOString(),
+            endDate: member.endDate instanceof Timestamp ? member.endDate.toDate().toISOString() : new Date(member.endDate).toISOString(),
           };
         });
       })
     );
   }
+  
 
   // Method to update a team member by ID
   updateTeamMember(id: string, teamMember: Partial<TeamMember>): Promise<void> {
@@ -51,8 +52,6 @@ export class TeamMemberService {
     const teamMemberDoc = doc(this.firestore, `teamMembers/${id}`);
     return deleteDoc(teamMemberDoc); // Delete the team member document from Firestore
   }
-  getProjects(): Observable<any[]> {
-    return collectionData(this.projectsCollection, { idField: 'id' });
-  }
+  
 }
 

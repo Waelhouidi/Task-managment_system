@@ -1,62 +1,15 @@
-
-<app-navs></app-navs>
-<div class="container">
-  <div class="row">
-      <div class="col-md-4 mb-md-0 mb-3">
-          <div class="card d-flex flex-column align-items-center justify-content-center">
-              <div class="inner-content d-flex flex-column align-items-center justify-content-center">
-                  <div class="img-container rounded-circle">
-                      <img src="https://svgshare.com/i/17bj.svg"
-                          alt="" class="rounded-circle">
-                  </div>
-                  <div class="h3">Mike Nielsen</div>
-                  <p class="designation text-muted text-uppercase">Web Developer</p>
-                  <div class="button d-flex justify-content-between mt-2">
-              <button type="button" class="btn d-flex justify-content-center border squre-4">
-                  <img src="https://svgshare.com/i/1690.svg">
-              </button>
-              <button type="button" class="btn d-flex justify-content-center border squre-4">
-                  <img src="https://svgshare.com/i/168i.svg">
-              </button>
-              <button type="button" class="btn d-flex justify-content-center border squre-4">
-                  <img src="https://svgshare.com/i/168b.svg">
-              </button>
-          </div>                        
-               </div>
-          </div>
-      </div>
-      <div class="col-md-4 mb-md-0 mb-3">
-          <div class="card d-flex flex-column align-items-center justify-content-center">
-              <div class="inner-content d-flex flex-column align-items-center justify-content-center">
-                  <div class="img-container rounded-circle">
-                      <img src="https://svgshare.com/i/17cJ.svg"
-                          alt="" class="rounded-circle">
-                  </div>
-                  <div class="h3">Arlene McCoy</div>
-                  <p class="designation text-muted text-uppercase">Softwer Developer</p>
-                  <div class="button d-flex justify-content-between mt-2">
-              <button type="button" class="btn d-flex justify-content-center border squre-4">
-                  <img src="https://svgshare.com/i/1690.svg">
-              </button>
-              <button type="button" class="btn d-flex justify-content-center border squre-4">
-                  <img src="https://svgshare.com/i/168i.svg">
-              </button>
-              <button type="button" class="btn d-flex justify-content-center border squre-4">
-                  <img src="https://svgshare.com/i/168b.svg">
-              </button>
-          </div>   
-              </div>
-          </div>
-      </div>
-      <div class="col-md-4 mb-md-0 mb-3">
+<div class="container"  >
+  <div class="row" >
+    
+      <div class="col-md-4 mb-md-0 mb-3"  *ngFor="let member of teamMembers" >
           <div class="card d-flex flex-column align-items-center justify-content-center">
               <div class="inner-content d-flex flex-column align-items-center justify-content-center">
                   <div class="img-container rounded-circle">
                       <img src="https://svgshare.com/i/17ca.svg"
                           alt="" class="rounded-circle">
                   </div>
-                  <div class="h3">Micheal Doe</div>
-                  <p class="designation text-muted text-uppercase">App Developer</p>
+                  <div class="h3">{{member.name}}</div>
+                  <p class="designation text-muted text-uppercase">{{member.name}}</p>
                  <div class="button d-flex justify-content-between mt-2">
               <button type="button" class="btn d-flex justify-content-center border squre-4">
                   <img src="https://svgshare.com/i/1690.svg">
