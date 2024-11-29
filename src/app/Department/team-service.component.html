@@ -1,0 +1,165 @@
+<app-navs></app-navs>
+
+<div class="overlay" *ngIf="isFormVisible">
+  <form [formGroup]="teamForm" (ngSubmit)="addTeam()" class="aza animated-form">
+    <div class="container card-0 justify-content-center">
+      <button (click)="x()"></button>
+      <div class="card shadow-lg card-1">
+        <div class="card-body inner-card">
+          <h3 class="text-center mb-4 text-violet">Add a New Team</h3>
+          <div class="row justify-content-center">
+            <!-- Team Name -->
+            <div class="col-lg-5 col-md-6 col-sm-12">
+              <div class="form-group">
+                <label for="name" class="text-violet">Team Name</label>
+                <input
+                  type="text"
+                  class="form-control input-custom"
+                  id="name"
+                  formControlName="name"
+                  placeholder="Type your Team Name"
+                />
+              </div>
+  
+              <!-- Members Selection -->
+              <div class="form-group">
+                <label for="selectedMember" class="text-violet">Select Members</label>
+                <select
+                  id="selectedMember"
+                  class="form-control input-custom"
+                  formControlName="selectedMember"
+                  multiple
+                >
+                  <option *ngFor="let member of members" [value]="member.id">
+                    {{ member.name }}
+                  </option>
+                </select>
+              </div>
+            </div>
+  
+            <!-- Project Selection -->
+            <div class="col-lg-5 col-md-6 col-sm-12">
+              <div class="form-group">
+                <label for="selectedProject" class="text-violet">Select Projects</label>
+                <select
+                  id="selectedProject"
+                  class="form-control input-custom"
+                  formControlName="selectedProject"
+                  multiple
+                >
+                  <option *ngFor="let project of projects" [value]="project.id">
+                    {{ project.name }}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Image Upload -->
+          <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10 col-12">
+              <div class="form-group files">
+                <label for="image" class="text-violet">Upload Your Image</label>
+                <input
+                  id="image"
+                  type="file"
+                  class="form-control input-custom"
+                  formControlName="image"
+                />
+              </div>
+            </div>
+          </div>
+  
+          <!-- Submit Button -->
+          <div class="row justify-content-end mb-4">
+            <div class="col-lg-4 col-auto">
+              <button type="submit" class="btn btn-violet btn-block">
+                <small class="font-weight-bold">ADD</small>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+ 
+
+
+<div class="container py-5 h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-md-12 col-xl-10">
+      <div class="card mask-custom bg-dark text-white">
+        <div class="card-body p-4">
+          <div class="text-center pt-3 pb-2">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp"
+              alt="Check"
+              width="60"
+            />
+            <h2 class="my-4">Department List</h2>
+            <button class="btn btn-outline-light" (click)="toggleForm()">ADD DEP</button>
+          </div>
+
+          <table class="table table-dark table-hover mb-0">
+            <thead>
+              <tr>
+                <th scope="col">Team Member</th>
+                <th scope="col">Project</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let team of teams$ | async">
+              <tr class="fw-normal">
+                <th style="display: flex; align-items: center;">
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                    alt="avatar 1"
+                    class="rounded-circle"
+                    style="width: 45px; height: auto;"
+                  />
+                  <span class="ms-3">
+                    <ul class="list-unstyled mb-0">
+                      <li *ngFor="let memberId of team.selectedMember">
+                        {{ getMemberNameById(memberId) }}
+                      </li>
+                    </ul>
+                  </span>
+                </th>
+                <td class="align-middle">
+                  <span>
+                    Call Sam For payments
+                    <ul class="list-unstyled">
+                      <li *ngFor="let projectId of team.selectedProject">
+                        {{ getProjectNameById(projectId) }}
+                      </li>
+                    </ul>
+                  </span>
+                </td>
+                <td class="align-middle">
+                  <button class="btn btn-outline-light btn-sm" (click)="showDetails(team)">Details</button>
+                  <button class="btn btn-outline-warning btn-sm" (click)="modifyTeam(team.id)">Modify</button>
+                  <button class="btn btn-outline-danger btn-sm" (click)="deleteTeam(team.id)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+  
+
+
+

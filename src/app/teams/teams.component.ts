@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TeamMemberService } from '../services/team-member.service'; // Adjust path as needed
+import { TeamMemberService } from '../services/team-member.service'
 import { TeamMember } from '../models/member';
 import { NavsComponent } from '../navs/navs.component';
 import { CommonModule } from '@angular/common';
