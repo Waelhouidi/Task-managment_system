@@ -1,36 +1,17 @@
-/* Background Layer */
-.background-layer {
-    position: fixed; /* Stays in place even when scrolling */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* Covers the entire page */
-    z-index: -1; /* Behind all other content */
-    background: radial-gradient(
-        125% 125% at 50% 10%,
-        black 50%,
-        purple 100%
-      ),
-      linear-gradient(
-        90deg,
-        rgba(var(--bs-body-color-rgb), 0.2) 1px,
-        transparent 0
-      ),
-      linear-gradient(
-        180deg,
-        rgba(var(--bs-body-color-rgb), 0.2) 1px,
-        transparent 0
-      );
-    background-size: 1rem 1rem, auto, auto; /* Sets the grid pattern size */
-    pointer-events: none; /* Ensures it doesn't interfere with user interaction */
-  }
-  
-  /* Additional Gradient Overlay */
-  .background-layer::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(0deg, black, transparent);
-    z-index: -1; /* Below content but part of the background */
-  }
-  
+html, body {
+    height: 100%;
+    margin: 0;
+    background-attachment: fixed; /* Ensures the background stays fixed when scrolling */
+    background-size: cover; /* Ensures the gradient covers the full viewport */
+    
+}
+:root{
+	/* Variables For Storing Colors */
+	--primary-clr: #ff7550;
+	--bg-primary: #1f1d2a;
+	--bg-secondary: #252935;
+	--bg-ternary: #35333f;
+	--heading-clr: #efefef;
+	--text-clr: #808191;
+	--gradient: linear-gradient(to right, #35333f, transparent);
+}

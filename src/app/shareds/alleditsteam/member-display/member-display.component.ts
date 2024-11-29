@@ -37,7 +37,12 @@ export class ProfileComponent {
         console.error('Error saving profile:', error);
       });
   }
+  isFormVisible = false;
 
+  toggleForm() {
+    this.isFormVisible = !this.isFormVisible;
+
+  }
   // Reset form after save
   resetForm() {
     this.teamMember = {

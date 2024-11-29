@@ -88,3 +88,60 @@ body {
 .register-link a:hover {
   color: #3a6fcc;
 }
+.right-column {
+  display: none;
+}
+
+.left-column {
+  padding: var(--space-16);
+}
+
+.welcoming-title {
+  font-weight: 600;
+  font-size: var(--font-size-24);
+}
+
+.form {
+  max-width: 338px;
+}
+
+.cta-btn {
+  width: 100%;
+  margin-top: var(--space-32);
+}
+
+.sign-up-prompt,
+.login-prompt {
+  font-weight: 500;
+  font-size: var(--font-size-14);
+  margin-top: var(--space-32);
+  text-align: center;
+}
+
+.sign-up-link,
+.log-in-link {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* media queries */
+@media (min-width: 768px) {
+  .right-column {
+    display: block;
+    border-left: 2px solid var(--black);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .row {
+    /* bring columns beside each other */
+    display: flex;
+  }
+
+  .left-column,
+  .right-column {
+    /* equal-width columns */
+    width: 50%;
+  }
+}

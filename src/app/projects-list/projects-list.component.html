@@ -1,42 +1,20 @@
+<app-navs></app-navs>  
 
-  
-<app-navs></app-navs>
+<div class="projects-container">  
+  <div class="project-card" *ngFor="let project of projects">  
+    <a href="/project-details" class="project-card-link">  
+      <div class="project-card-header">  
+        <h3>{{ project.name }}</h3>  
+        <span class="project-status"   
+              [ngClass]="{'status-important': project.status === 'important', 'status-normal': project.status !== 'important'}">  
+          {{ project.status }}  
+        </span>  
+      </div>  
+      <div class="project-card-body">  
+        <p><strong>Start:</strong> {{ project.startDate }}</p>  
+        <p><strong>End:</strong> {{ project.endDate }}</p>  
+      </div>  
+    </a>  
+  </div>  
+</div>
 
-<div class="ag-format-container  " *ngFor="let project of projects"  id="bab">
-    <div class="ag-courses_box">
-      <div class="ag-courses_item">
-        <a href="/project-details" class="ag-courses-item_link">
-          <div class="ag-courses-item_bg"></div>
-  
-          <div class="ag-courses-item_title">
-            {{project.name}} :&#160;
-          </div>
-          <div class="ag-courses-item_title" [ngClass]="{'red':project.status=='important'}">
-            {{project.status}} &#160;
-          </div>
-        
-          <div class="ag-courses-item_date-box">
-            Start:
-            <span class="ag-courses-item_date">
-              {{project.startDate}} 
-            </span>
-          </div>
-          <div class="ag-courses-item_date-box">
-            End:
-            <span class="ag-courses-item_date">
-              {{project.endDate}} 
-            </span>
-          </div>
-        </a>
-      </div>
-  
-     
-  
-    
-  
-     
-  
-      
-  
-    </div>
-  </div>

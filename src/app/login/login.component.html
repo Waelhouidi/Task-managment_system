@@ -1,3 +1,52 @@
+<div class="vh-100 d-flex flex-column justify-content-center align-items-center bg-dark  text-white">
+  <!-- Project Name and Welcome Message -->
+  <div class="text-center mb-5">
+    <h1 class="display-4">Projecty</h1>
+    <p class="lead">Welcome! Please log in to continue.</p>
+  </div>
+
+  <!-- Login Form -->
+  <div class="card shadow-lg p-4 bg-secondary text-white w-100" style="max-width: 400px;">
+    <h2 class="text-center mb-4 "  >Login</h2>
+    <form (ngSubmit)="login()">
+      <div class="mb-3">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Email"
+          [(ngModel)]="email"
+          name="email"
+          required
+          aria-label="Email"
+        />
+      </div>
+      <div class="mb-3">
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          [(ngModel)]="password"
+          name="password"
+          required
+          aria-label="Password"
+        />
+      </div>
+      <button type="submit" class="btn btn-outline-dark w-100">Login</button>
+    </form>
+    <p *ngIf="errorMessage" class="text-danger text-center mt-3">{{ errorMessage }}</p>
+    <p class="text-center mt-4">
+      Don't have an account?
+      <a href="/register" class="text-light">Register here</a>
+    </p>
+  </div>
+</div>
+
+
+
+<!--**********
+
+
+
 <div class="login-container">
   <div class="login-card">
     <h2>Login</h2>
@@ -32,3 +81,4 @@
     </p>
   </div>
 </div>
+-->
