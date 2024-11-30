@@ -3,14 +3,28 @@
 .container {
   max-width: 1200px;
   margin: auto;
-}
+  padding: 0px;
 
+}
+.btn-circle {
+  width: 50px; /* Adjust the size */
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.btn-circle i {
+  font-size: 1.2rem; /* Adjust icon size */
+}
 /* Card Styling */
 .card.project-card {
   border: none;
   border-radius: 15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #ffffff; /* White for a cleaner look */
+	background:#fff;
+
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
   max-height: 300px; /* Ensures consistent card height */

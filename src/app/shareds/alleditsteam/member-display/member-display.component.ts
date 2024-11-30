@@ -4,6 +4,9 @@ import { TeamMember } from '../../../models/member';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NavsComponent } from "../../../navs/navs.component";
+import { ProjectService } from '../../../services/project.service';
+import { project } from '../../../models/project';
+import { TeamServiceManager  } from '../../../services/team.service'
 
 @Component({
   selector: 'app-profile',
@@ -22,8 +25,15 @@ export class ProfileComponent {
     startDate: new Date(),
     endDate: new Date(),
   };
+  projects: project[] = []; 
+  deps: any[] =[] ;
 
-  constructor(private teamMemberService: TeamMemberService) {}
+
+  constructor(private teamMemberService: TeamMemberService,
+    private projecty: ProjectService,
+    private depy:TeamServiceManager,
+
+  ) {}
 
   // Save profile to Firestore
   saveProfile() {
@@ -55,4 +65,23 @@ export class ProfileComponent {
       endDate: new Date(),
     };
   }
+  ngOnInit(): void {
+    this.loadProjects();
+    this.loadDeps();
+  }
+  loadProjects() {
+    this.projecty.getProjects().subscribe({
+      next: (data: project[]) => {
+        this.projects = data;
+      },
+      
+    });
+  }
+  loadDeps(){
+    this.depy.getTeams().subscribe({
+      next: (data: any[]) => {
+        this.deps=data;
+    }})
+  }
+  
 }

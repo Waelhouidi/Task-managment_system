@@ -16,6 +16,10 @@
             <p><strong>End:</strong> {{ project.endDate }}</p>
           </div>
         </a>
+      
+        <button class="btn btn-outline-danger btn-circle" (click)="deleteProject(project.id.toString())">
+          <i class="fa fa-trash" style="color: red;"></i>
+        </button>
       </div>
     </div>
   </div>

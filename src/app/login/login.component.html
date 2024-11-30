@@ -1,11 +1,41 @@
+<div class="cont">
+
+
+
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form >
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" name="txt" placeholder="User name" required="">
+					<input type="email" name="email" placeholder="Email" required="">
+          <input type="number" name="broj" placeholder="BrojTelefona" required="">
+					<input type="password" name="pswd" placeholder="Password" required="">
+					<button>Sign up</button>
+				</form>
+			</div>
+
+			<div class="login" >
+				<form >
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="email" name="email" placeholder="Email" required="" [(ngModel)]="email">
+					<input type="password" name="pswd" placeholder="Password" required="" [(ngModel)]="password">
+					<button (click)="login()">Login</button>
+				</form>
+        <p *ngIf="errorMessage" class="text-danger text-center mt-3">{{ errorMessage }}</p>
+
+			</div>
+	</div>
+</div>
+
+<!--
 <div class="vh-100 d-flex flex-column justify-content-center align-items-center bg-dark  text-white">
-  <!-- Project Name and Welcome Message -->
   <div class="text-center mb-5">
     <h1 class="display-4">Projecty</h1>
     <p class="lead">Welcome! Please log in to continue.</p>
   </div>
 
-  <!-- Login Form -->
   <div class="card shadow-lg p-4 bg-secondary text-white w-100" style="max-width: 400px;">
     <h2 class="text-center mb-4 "  >Login</h2>
     <form (ngSubmit)="login()">
@@ -40,6 +70,8 @@
     </p>
   </div>
 </div>
+-->
+
 
 
 
