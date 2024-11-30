@@ -1,85 +1,93 @@
-/* Container Style */  
-.projects-container {  
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+
+/* General styling */
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Card Styling */
+.card.project-card {
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff; /* White for a cleaner look */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-height: 300px; /* Ensures consistent card height */
+  min-width: 400px;
+
+}
+
+.card.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Styling */
+.card-header {
+  padding: 15px 20px;
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6a0dad; /* Violet */
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.badge {
+  padding: 8px 12px;
   border-radius: 20px;
-  border: 1px solid #eeeef4;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
-  display: flex;  
-  flex-wrap: wrap;  
-  justify-content: center;  /* Center align items */  
-  padding: 20px;  
-  gap: 20px;  /* Space between cards */  
-}  
+  font-size: 1rem;
+}
 
-/* Card Style */  
-.project-card {  
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid #eeeef4;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
-	background:#2E073F; 
-  color: white;  /* White text for contrast */  
-  border-radius: 10px;  
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
-  overflow: hidden;  /* Ensures content stays within border */  
-  transition: transform 0.3s;  /* Animation effect */  
-  width: calc(100% / 3 - 20px);  /* 3 cards in a row with some spacing */  
-}  
+.status-important {
+  background-color: #d9534f; /* Red */
+  color: white;
+}
 
-.project-card:hover {  
-  transform: scale(1.05);  /* Slight zoom effect on hover */  
-}  
+.status-normal {
+  background-color: #5bc0de; /* Light blue */
+  color: white;
+}
 
-/* Header Style */  
-.project-card-header {  
-  display: flex;  
-  justify-content: space-between;  /* Align items on either side */  
-  padding: 15px;  
-  background-color: #1e1e5f; /* Darker shade for 
-  
-  header */
+/* Card Body */
+.card-body {
+  padding: 15px;
+}
 
-}  
+.card-body p {
+  margin: 10px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
 
-/* Link Style */  
-.project-card-link {  
-  text-decoration: none;  
-  color: inherit; /* Inherit text color */  
-}  
+/* Hover Effects */
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+}
 
-/* Status Style */  
-.project-status {  
-  padding: 5px 10px;  
-  border-radius: 5px;  
-}  
+.project-card-link:hover .card-header {
+  background-color: #4b0082; /* Darker violet */
+}
 
-/* Status Important */  
-.status-important {  
-  background-color: #ff6347; /* Red for important status */  
-}  
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 20px;
+    padding: 15px;
+  }
 
-/* Status Normal */  
-.status-normal {  
-  background-color: #28a745; /* Green for normal status */  
-}  
+  .card-title {
+    font-size: 1.25rem;
+  }
 
-/* Responsive Design */  
-@media (max-width: 768px) {  
-  .project-card {  
-    width: calc(100% - 20px);  /* Full width on smaller screens */  
-  }  
-}  
-
-@media (min-width: 769px) and (max-width: 992px) {  
-  .project-card {  
-    width: calc(50% - 20px);  /* Two cards in a row for medium screens */  
-  }  
-}  
-
-@media (min-width: 993px) {  
-  .project-card {  
-    width: calc(33.333% - 20px);  /* Three cards in a row for larger screens */  
-  }  
+  .badge {
+    font-size: 0.9rem;
+  }
 }

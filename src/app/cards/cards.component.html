@@ -1,39 +1,37 @@
 <app-navs></app-navs>
 
-<div class="container">
-  <h2>Projects</h2>
-  <form (ngSubmit)="addProject()">
-    <div>
-      <label for="name">Project Name</label>
-      <input [(ngModel)]="newProject.name" name="name" required placeholder="Enter project name" />
+<div class="container my-5">
+  <h2 class="text-center text-purple">Projects</h2>
+  <form (ngSubmit)="addProject()" class="bg-white p-4 rounded shadow-sm">
+    <div class="mb-3">
+      <label for="name" class="form-label">Project Name</label>
+      <input type="text" class="form-control" [(ngModel)]="newProject.name" name="name" required placeholder="Enter project name" />
     </div>
     
-    <div>
-      <label for="description">Description</label>
-      <textarea [(ngModel)]="newProject.description" name="description" placeholder="Enter project description"></textarea>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea class="form-control" [(ngModel)]="newProject.description" name="description" placeholder="Enter project description"></textarea>
     </div>
 
-    <div>
-      <label for="startDate">Start Date</label>
-      <input type="date" [(ngModel)]="newProject.startDate" name="startDate" [value]="newProject.startDate | date: 'yyyy-MM-dd'" required />
+    <div class="mb-3">
+      <label for="startDate" class="form-label">Start Date</label>
+      <input type="date" class="form-control" [(ngModel)]="newProject.startDate" name="startDate" [value]="newProject.startDate | date: 'yyyy-MM-dd'" required />
     </div>
 
-    <div>
-      <label for="endDate">End Date</label>
-      <input type="date" [(ngModel)]="newProject.endDate" name="endDate" [value]="newProject.endDate | date: 'yyyy-MM-dd'" required />
+    <div class="mb-3">
+      <label for="endDate" class="form-label">End Date</label>
+      <input type="date" class="form-control" [(ngModel)]="newProject.endDate" name="endDate" [value]="newProject.endDate | date: 'yyyy-MM-dd'" required />
     </div>
 
-    <div>
-      <label for="status">Status</label>
-      <select [(ngModel)]="newProject.status" name="status">
+    <div class="mb-3">
+      <label for="status" class="form-label">Status</label>
+      <select class="form-select" [(ngModel)]="newProject.status" name="status">
         <option value="important">important</option>
         <option value="low">low</option>
         <option value="take time">take time</option>
       </select>
     </div>
 
-    <button type="submit">Add Project</button>
+    <button type="submit" class="btn btn-purple w-100">Add Project</button>
   </form>
-
-
 </div>

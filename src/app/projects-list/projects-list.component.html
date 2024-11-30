@@ -1,20 +1,22 @@
-<app-navs></app-navs>  
+<app-navs></app-navs>
 
-<div class="projects-container">  
-  <div class="project-card" *ngFor="let project of projects">  
-    <a href="/project-details" class="project-card-link">  
-      <div class="project-card-header">  
-        <h3>{{ project.name }}</h3>  
-        <span class="project-status"   
-              [ngClass]="{'status-important': project.status === 'important', 'status-normal': project.status !== 'important'}">  
-          {{ project.status }}  
-        </span>  
-      </div>  
-      <div class="project-card-body">  
-        <p><strong>Start:</strong> {{ project.startDate }}</p>  
-        <p><strong>End:</strong> {{ project.endDate }}</p>  
-      </div>  
-    </a>  
-  </div>  
+<div class="container my-5">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="col" *ngFor="let project of projects">
+      <div class="card project-card h-100">
+        <a href="/project-details" class="project-card-link">
+          <div class="card-header bg-purple text-white">
+            <h3 class="card-title">{{ project.name }}</h3>
+            <span class="badge project-status" [ngClass]="{'status-important': project.status === 'important', 'status-normal': project.status !== 'important'}">
+              {{ project.status }}
+            </span>
+          </div>
+          <div class="card-body">
+            <p><strong>Start:</strong> {{ project.startDate }}</p>
+            <p><strong>End:</strong> {{ project.endDate }}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
-
