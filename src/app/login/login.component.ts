@@ -26,9 +26,9 @@ export class LoginComponent {
 
     try {
       await this.authService.login(this.email, this.password);
-      this.router.navigate(['/project-list']); // Redirect after successful login
+      this.router.navigate(['/project-list']); 
     } catch (error: any) {
-      this.errorMessage = error.message; // Display error message
+      this.errorMessage = error.message; 
     }
   }
 }
