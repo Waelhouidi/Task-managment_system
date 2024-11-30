@@ -8,7 +8,7 @@
 }  
 
 .mobile-menu {  
-  display: none; /* Hidden by default */  
+  display: none;  
   position: fixed; /* Fixed position */  
   top: 0; /* Align to top */  
   right: 0; /* Align to right */  
