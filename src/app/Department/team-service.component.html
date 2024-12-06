@@ -1,9 +1,11 @@
 <app-navs></app-navs>
 
 <div class="overlay" *ngIf="isFormVisible">
+
   <form [formGroup]="teamForm" (ngSubmit)="addTeam()" class="aza animated-form">
+    <button type="button" (click)="x()">fermer </button>
+
     <div class="container card-0 justify-content-center">
-      <button (click)="x()"></button>
       <div class="card shadow-lg card-1">
         <div class="card-body inner-card">
           <h3 class="text-center mb-4 text-violet">Add a New Team</h3>
@@ -160,6 +162,3 @@
 
 
   
-
-
-

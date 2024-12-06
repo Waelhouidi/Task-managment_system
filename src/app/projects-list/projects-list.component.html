@@ -12,15 +12,28 @@
             </span>
           </div>
           <div class="card-body">
-            <p><strong>Start:</strong> {{ project.startDate }}</p>
-            <p><strong>End:</strong> {{ project.endDate }}</p>
+            <p><strong>Start:</strong> {{ project.startDate | date:'mediumDate'}}</p>
+            <p><strong>End:</strong> {{ project.endDate | date:'mediumDate' }}</p>
+            
+            
           </div>
         </a>
       
-        <button class="btn btn-outline-danger btn-circle" (click)="deleteProject(project.id.toString())">
-          <i class="fa fa-trash" style="color: red;"></i>
-        </button>
+        <div style="display: flex;">
+        
+          <button class="btn btn-circle" (click)="modifyProject(project.id.toString())">
+            <i class='fa fa-edit blue-color' style="color: blue;"></i>
+          </button>
+
+          <button class="btn btn-circle" (click)="deleteProject(project.id.toString())">
+            <i class="fa fa-trash" style="color: red;"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
+</div>
+
+<div>
+  
 </div>

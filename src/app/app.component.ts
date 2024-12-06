@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavsComponent } from "./navs/navs.component";
 import {RouterLink, RouterOutlet} from '@angular/router';
+import { NavsComponent } from './navs/navs.component';
 
 @Component({
   selector: 'app-root',

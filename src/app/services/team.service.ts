@@ -35,7 +35,7 @@ export class TeamServiceManager {
     const teamDoc = doc(this.teamCollection, id);
     return deleteDoc(teamDoc);
   }
-  showdetails(){
+  showdetails(teamId: string){
     
   }
 }

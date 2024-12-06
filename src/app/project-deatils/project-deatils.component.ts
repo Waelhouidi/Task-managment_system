@@ -3,6 +3,7 @@ import { project } from '../models/project';
 import { ProjectService } from '../services/project.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
 import { NavsComponent } from "../navs/navs.component"; 
 import { Router } from '@angular/router';
 @Component({

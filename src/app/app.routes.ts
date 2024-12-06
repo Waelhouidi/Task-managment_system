@@ -5,8 +5,9 @@ import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProjectDeatilsComponent } from './project-deatils/project-deatils.component';
-import {ProfileComponent} from './shareds/alleditsteam/member-display/member-display.component';
-import {  TeamServiceComponent } from './Department/team-service.component';
+import { ProfileComponent } from './shareds/alleditsteam/member-display/member-display.component';
+import { TeamServiceComponent } from './Department/team-service.component';
+import { empComponent } from './members-cards/members-cards.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -14,7 +15,8 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'project', component: ProjectsComponent, canActivate: [AuthGuard] },
   { path: 'project-list', component: ProjectListComponent, canActivate: [AuthGuard] },
-  { path: 'project-details', component: ProjectDeatilsComponent},
-  { path: 'memeber', component: ProfileComponent},
-  { path: 'Department', component: TeamServiceComponent}
+  { path: 'project-details', component: ProjectDeatilsComponent },
+  { path: 'member', component: ProfileComponent },
+  { path: 'department', component: TeamServiceComponent },
+  { path: 'cardsM', component: empComponent },
 ];
